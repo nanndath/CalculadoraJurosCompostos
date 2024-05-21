@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juros Compostos</title>
+    <link rel="stylesheet" href="css/juros.css">
+</head>
+<body>
+    <div id="oi">
+        <h1><label>Calculadora de Juros Compostos </label></h1>
+
+         <label for="">Valor inicial(capital):</label>
+         <input type="text" id="capital" class="um"><br>
+
+         <label for="">Taxa de juros a.m:</label>
+         <input type="text" id="juros" class="um"><br>
+
+         <label for="">Tempo de rendimento a.m</label>
+         <input type="text" id="rendimento" class="um"><br>
+
+         <div>
+            <h4>Resultado</h4>
+            <span id="total">R$ 00,00</span>
+         </div>
+        
+         
+        <button onclick="msg()">Calcular</button>
+       
+        
+    </div>
+    
+    <script>
+        function msg(){
+            let capital=document.getElementById("capital").value;
+            let juros=document.getElementById("juros").value/100;
+            let rendimento=document.getElementById("rendimento").value;
+
+            let resultado=  capital * (1 + juros )**rendimento;
+            document.getElementById("total").innerHTML= ("R$ " +resultado.toFixed(2).replace('.', ','));       }
+    </script>
+</body>
+</html>
